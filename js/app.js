@@ -67,7 +67,12 @@ function restartGame(){
     initializeGame()
 }
 function yourGuessHistory(){
-
+    guessHistory.innerHTML = ""; // Clear history display
+    history.forEach((guess, index) => {
+        const listItem = document.createElement('li');
+        listItem.innerText = `Guess ${index + 1}: ${guess}`;
+        guessHistory.appendChild(listItem);
+    });
 }
 
 submitBtn.addEventListener('click', function(){
