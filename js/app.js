@@ -82,3 +82,5 @@ submitBtn.addEventListener('click', function(){
 restartBtn.addEventListener('click', function(){
    restartGame()
 })
+
+initializeGame() 
