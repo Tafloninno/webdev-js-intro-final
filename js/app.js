@@ -16,7 +16,7 @@ function initializeGame(){
     attempts = 0
     history = []
     submitBtn.disabled = false
-    guessNumber.innerText = ""
+    yourGuess.innerText = ""
     computerGeuss.innerText = ""
     result.innerText = ""
     guessHistory.innerHTML = ""
@@ -55,16 +55,19 @@ function render (){
         guessNumber()
         computerGuessNumber()
         gameResult()
+        yourGuessHistory()
     }
      if(attempts >= maxTries){
         submitBtn.disabled = true
         result.innerText = "Game over!"
+        restartGame()
     }
  
 }
 
 function restartGame(){
     initializeGame()
+    restartBtn.disabled = false
 }
 function yourGuessHistory(){
     guessHistory.innerHTML = ""; // Clear history display
