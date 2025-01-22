@@ -44,8 +44,6 @@ function gameResult(){
     result.innerText = "Your guess is too low"
    }else if(userInput > randomNumber){
     result.innerText = "Your guess is too high"
-   }else if(userInput !== randomNumber){
-    result.innerText = "You lose!"
    }
 }
 
@@ -59,18 +57,16 @@ function render (){
     }
      if(attempts >= maxTries){
         submitBtn.disabled = true
-        result.innerText = "Game over!"
-        restartGame()
+        result.innerText = "Game over! You've used all your attempts."
     }
  
 }
 
 function restartGame(){
     initializeGame()
-    restartBtn.disabled = false
 }
 function yourGuessHistory(){
-    guessHistory.innerHTML = ""; // Clear history display
+    guessHistory.innerHTML = "";
     history.forEach((guess, index) => {
         const listItem = document.createElement('li');
         listItem.innerText = `Guess ${index + 1}: ${guess}`;
